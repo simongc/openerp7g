@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="ama" model="hr.state">
+            <field name="state">Amazonas</field>
+            <field name="country">240</field>
+        </record>
+        <record id="anz" model="hr.state">
+            <field name="state">Anzoátegui</field>
+            <field name="country">240</field>
+        </record>
+        <record id="apu" model="hr.state">
+            <field name="state">Apure</field>
+            <field name="country">240</field>
+        </record>
+        <record id="ara" model="hr.state">
+            <field name="state">Aragua</field>
+            <field name="country">240</field>
+        </record>
+        <record id="bar" model="hr.state">
+            <field name="state">Barinas</field>
+            <field name="country">240</field>
+        </record>
+        <record id="bol" model="hr.state">
+            <field name="state">Bolívar</field>
+            <field name="country">240</field>
+        </record>
+        <record id="car" model="hr.state">
+            <field name="state">Carabobo</field>
+            <field name="country">240</field>
+        </record>
+        <record id="coj" model="hr.state">
+            <field name="state">Cojedes</field>
+            <field name="country">240</field>
+        </record>
+        <record id="dea" model="hr.state">
+            <field name="state">Delta Amacuro</field>
+            <field name="country">240</field>
+        </record>
+        <record id="dic" model="hr.state">
+            <field name="state">Distrito Capital</field>
+            <field name="country">240</field>
+        </record>
+        <record id="fal" model="hr.state">
+            <field name="state">Falcón</field>
+            <field name="country">240</field>
+        </record>
+        <record id="gua" model="hr.state">
+            <field name="state">Guárico</field>
+            <field name="country">240</field>
+        </record>
+        <record id="lar" model="hr.state">
+            <field name="state">Lara</field>
+            <field name="country">240</field>
+        </record>
+        <record id="mer" model="hr.state">
+            <field name="state">Mérida</field>
+            <field name="country">240</field>
+        </record>
+        <record id="mir" model="hr.state">
+            <field name="state">Miranda</field>
+            <field name="country">240</field>
+        </record>
+        <record id="mon" model="hr.state">
+            <field name="state">Monagas</field>
+            <field name="country">240</field>
+        </record>
+        <record id="nue" model="hr.state">
+            <field name="state">Nueva Esparta</field>
+            <field name="country">240</field>
+        </record>
+        <record id="por" model="hr.state">
+            <field name="state">Portuguesa</field>
+            <field name="country">240</field>
+        </record>
+        <record id="suc" model="hr.state">
+            <field name="state">Sucre</field>
+            <field name="country">240</field>
+        </record>
+        <record id="tac" model="hr.state">
+            <field name="state">Táchira</field>
+            <field name="country">240</field>
+        </record>
+        <record id="tru" model="hr.state">
+            <field name="state">Trujillo</field>
+            <field name="country">240</field>
+        </record>
+        <record id="var" model="hr.state">
+            <field name="state">Vargas</field>
+            <field name="country">240</field>
+        </record>
+        <record id="yar" model="hr.state">
+            <field name="state">Yaracuy</field>
+            <field name="country">240</field>
+        </record>
+        <record id="zul" model="hr.state">
+            <field name="state">Zulia</field>
+            <field name="country">240</field>
+        </record>
+        <record id="def" model="hr.state">
+            <field name="state">Dependencias Federales</field>
+            <field name="country">240</field>
+        </record>
+    </data>
+</openerp>

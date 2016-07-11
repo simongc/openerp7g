@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="hr_contract_form_inherit" model="ir.ui.view">
+            <field name="name">hr.contract.view.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr_contract.hr_hr_employee_view_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='medic_exam']" position="before">
+                    <field name="contract_date_start"/>
+                    <field name="wage" string="Salario"/>
+                </xpath>
+                    <!-- SELECCIÓN DE HORARIOS DE ENTRADA Y SALIDA -->
+<!--                 <xpath expr="//group[@name='active_group']" position="before">
+                    <group string="Horario">
+                        <h3>Turno de la mañana</h3><br/>
+                        <field name="morning_entrance"/>
+                        <field name="morning_exit"/>
+                        <h3>Turno de la tarde</h3><br/>
+                        <field name="afternoon_entrance"/>
+                        <field name="afternoon_exit"/>
+                    </group>
+                   </xpath> -->
+            </field>
+        </record>
+
+    </data>
+</openerp>

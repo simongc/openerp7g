@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+	<data>
+		<report
+			auto="False"	
+			id="family_report"
+			model="hr.employee"
+			name="family.report"
+			rml="hr_nominag/report/family_report.rml"
+			string="Reporte de Hijos"
+		/>
+	</data>
+</openerp>

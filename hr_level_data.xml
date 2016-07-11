@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="1" model="hr.level">
+            <field name="level">1er nivel Inicial</field>
+        </record>
+        <record id="2" model="hr.level">
+            <field name="level">2do nivel Inicial</field>
+        </record>
+        <record id="3" model="hr.level">
+            <field name="level">3er nivel Inicial</field>
+        </record>
+        <record id="4" model="hr.level">
+            <field name="level">1er grado Básica</field>
+        </record>
+        <record id="5" model="hr.level">
+            <field name="level">2do grado Básica</field>
+        </record>
+        <record id="6" model="hr.level">
+            <field name="level">3er grado Básica</field>
+        </record>
+        <record id="7" model="hr.level">
+            <field name="level">4to grado Básica</field>
+        </record>
+        <record id="8" model="hr.level">
+            <field name="level">5to grado Básica</field>
+        </record>
+        <record id="9" model="hr.level">
+            <field name="level">6to grado Básica</field>
+        </record>
+        <record id="10" model="hr.level">
+            <field name="level">7mo grado Básica</field>
+        </record>
+        <record id="11" model="hr.level">
+            <field name="level">8vo grado Básica</field>
+        </record>
+        <record id="12" model="hr.level">
+            <field name="level">9no grado Básica</field>
+        </record>
+        <record id="13" model="hr.level">
+            <field name="level">1er Año Diversificado</field>
+        </record>
+        <record id="14" model="hr.level">
+            <field name="level">2do Año Diversificado</field>
+        </record>
+    </data>
+</openerp>
+
+
+

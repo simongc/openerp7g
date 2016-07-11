@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="hr_employee_form_inherit" model="ir.ui.view" >
+            <field name="name">hr.view.employee.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[@class='oe_right oe_button_box']" position="after">
+                    <group>
+                        <!-- DATOS PERSONALES AÑADIDOS -->
+                        <group colspan="4" col="4">
+                            <field colspan="2" name="first_name" on_change="get_names(first_name, second_name, first_surname,  second_surname)"/>
+                            <field colspan="2" name="second_name" on_change="get_names(first_name, second_name, first_surname,  second_surname)"/>
+                            <field colspan="2" name="first_surname" on_change="get_names(first_name, second_name, first_surname,  second_surname)"/>
+                            <field colspan="2" name="second_surname" on_change="get_names(first_name, second_name, first_surname,  second_surname)"/>
+                            <field colspan="2" name="full_name" />    
+                        </group>
+                    </group>
+
+                </xpath>
+                       <!-- DATOS PERSONALES AÑADIDOS -->
+                <xpath expr="//field[@name='address_home_id']" position="after">
+                    <field name="house_phone" />
+                    <field name="movil_phone" />
+                    <field name="personal_mail" />
+                </xpath>
+                <xpath expr="//field[@name='coach_id']" position="after">
+                    <field name="supervisor"/>
+                </xpath>
+                <xpath expr="//field[@name='passport_id']" position="after">
+                    <field name="handedness"  widget="radio"/>
+                </xpath>
+                <xpath expr="//label[@for='name']" position="before">
+                    <group>
+                        <group colspan="3" col="3" class="oe_inline" >
+                            <field name="vat" colspan="2" class="oe_inline"/>
+                            <button colspan="1" name="search_partner_seniat" string="Buscar RIF" type="object" icon="terp-check"/>
+                        </group>
+                    </group>
+                </xpath>
+            <xpath expr="//field[@name='coach_id']" position="replace">
+                <field name="coach_id" string="Supervisor" attrs="{'invisible': [('supervisor','!=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='parent_id']" position="replace">
+                <field name="parent_id" string="Gerente" attrs="{'invisible': [('manager','!=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='job_id']" position="replace">
+                <field name="job_id" string="Cargo" />
+            </xpath>
+
+            </field>
+        </record>
+
+        <record id="hr_department_form_inherit" model="ir.ui.view" >
+            <field name="name">hr.department.form.inherit</field>
+            <field name="model">hr.department</field>
+            <field name="inherit_id" ref="hr.view_department_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='manager_id']" position="replace">
+                    <field name="manager_id" string="Gerente" />
+                </xpath>
+            </field>
+        </record>
+
+
+
+        <record id="hr_address_form" model="ir.ui.view" >
+            <field name="name">hr.address.form</field>
+            <field name="model">hr.address.custom</field>
+            <field name="view_type">form</field>
+            <field name="arch" type="xml">
+                <form string="Dirección" version="7.0">
+                    <group>
+                        <field name="address"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="zipcode" />
+                            <field name="city" />
+                        </group>
+                        <group>
+                            <field name="state" on_change="get_country(state)"/>
+                            <field name="country" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="hr_state_form" model="ir.ui.view" >
+            <field name="name">hr.state.form</field>
+            <field name="model">hr.state</field>
+            <field name="view_type">form</field>
+            <field name="arch" type="xml">
+                <form string="Estado" version="7.0" >
+                    <group>
+                        <field name="state"/>
+                        <field name="country"/>
+                    </group>                        
+                </form>
+            </field>
+        </record>
+        <record id="hr_state_tree" model="ir.ui.view" >
+            <field name="name">hr.state.tree</field>
+            <field name="model">hr.state</field>
+            <field name="view_type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="ficha">
+                    <field name="state"/>
+                    <field name="country"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_state_action" model="ir.actions.act_window">
+            <field name="name">Estados</field>
+            <field name="res_model">hr.state</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem action="hr_state_action" id="hr_state_menu" sequence="12" parent="hr.menu_hr_configuration"/>
+    </data>
+</openerp>

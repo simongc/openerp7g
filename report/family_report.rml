@@ -1,0 +1,30 @@
+<!DOCTYPE document SYSTEM "rml.dtd">
+<document filename="example_1.pdf">
+	<template pageSize="(595.0,842.0)" title="Test" author="Martin Simon" allowSplitting="20">
+		<pageTemplate id="first">
+			<frame id="first" x1="57.0" y1="57.0" width="481" height="728"/>
+		</pageTemplate>
+	</template>
+    <stylesheet>
+    </stylesheet>
+  <story>
+    <para style="Preformatted Text">
+      <font color="black">  </font>
+    </para>
+    <para style="Preformatted Text">[[ repeatIn(objects, 'o') ]]</para>
+
+
+    <para style="Preformatted Text">Empleado : [[ o.name ]] [[ o.last_name ]]</para>
+    <para style="Preformatted Text">Cédula : [[ o.vat ]] </para>
+    <hr/>
+
+    <para style="Preformatted Text">Nombre : [[ o.child_name ]] [[ o.child_surname ]] Edad :[[ o.age ]] años</para>
+    <para style="Preformatted Text"> [[ o.birthday ]] [[ o.instruction_level ]] [[ o.nursery ]] </para>
+    <para style="Preformatted Text">
+      <font color="white"> </font>
+    </para>
+    <para style="Preformatted Text">
+      <font color="white"> </font>
+    </para>
+  </story>
+</document>

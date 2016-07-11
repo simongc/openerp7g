@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- VISTA DE LA INFORMACIÓN DE CUENTA BANCARIA -->
+		<record id="hr_bank_view_form_inherit" model="ir.ui.view">
+			<field name="name">hr.bank.view.form.inherit</field>
+			<field name="model">hr.employee</field>
+			<field name="inherit_id" ref="hr.view_employee_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='otherid']" position="after">
+					<field name="bank_account_custom" context="{'current_id': id, 'current_mail': personal_mail, 'current_vat': vat }"/>
+				</xpath>
+			</field>
+		</record>
+		<record id="hr_bank_account_form" model="ir.ui.view" >
+			<field name="name">hr.bank.account.form</field>
+			<field name="model">hr.bank.account</field>
+			<field name="view_type">form</field>
+			<field name="arch" type="xml">
+				<form string="Cuenta Bancaria" version="7.0" create="false">
+					<group>
+						<group>
+						<field name="bank"/>
+						<field name="default"/>
+						</group>
+						<group>
+						<field name="employee_id" attrs="{'readonly': [('employee_id','!=', False)]}"/>
+						</group>
+					</group>
+					<group>
+						<group>
+							<field name="account_number" />
+							<field name="account_holder_id" />
+						</group>
+						<group>
+							<field name="account_holder_mail"/>
+							<field name="account_type" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+
+	<record model="ir.ui.view" id="bank_account_tree">
+	  <field name="name">bank.account.tree</field>
+	  <field name="model">hr.bank.account</field>
+	  <field name="type">tree</field>
+	  <field name="arch" type="xml">
+		<tree string="ficha" create="false">
+		  <field name="bank"/>
+		  <field name="default"/>
+		  <field name="employee_id"/>      
+		  <field name="account_number"/>      
+		  <field name="account_holder_id"/>            
+		  <field name="account_holder_mail"/>      
+		  <field name="account_type"/>      
+		</tree>
+	  </field>
+	</record>
+
+
+
+	<record id="bank_account_action" model="ir.actions.act_window">
+	  <field name="name">Cuentas Bancarias</field>
+	  <field name="res_model">hr.bank.account</field>
+	  <field name="view_type">form</field>
+	  <field name="view_mode">tree,form</field>
+	</record>
+
+	<menuitem action="bank_account_action" id="bank_account_menu" sequence="5" parent="hr.menu_hr_main"/>
+
+
+	</data>
+</openerp>

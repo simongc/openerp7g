@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+
+
+		<record id="hr_bank_view_form_export" model="ir.ui.view">
+			<field name="name">hr.bank.view.form.export</field>
+			<field name="model">hr.payslip</field>
+			<field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='credit_note']" position="after">
+					<field name="bank_accounts" widget="selection"/>
+				</xpath>
+<!-- 				<xpath expr="//field[@name='name']" position="replace">
+					<field name="name" on_change="get_default_bank(employee_id)"/>
+				</xpath>
+ -->
+			</field>
+		</record>
+
+
+	</data>
+</openerp>
